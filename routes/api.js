@@ -15,14 +15,15 @@ router.get("/api/notes", async (req, res) => {
     res.json(notesArr);
 })
 
-router.post("/api/notes", async (req, res) => {
+router.post("./api/notes", async (req, res) => {
     const notes = await readFile("db/db.json", "utf-8");
     const notesArr = JSON.parse(notes) || [];
     console.log(req. body);
     const newNotes = 
     {
-        title:req.body.title, text:req.body.text, 
-        id:2
+        title: req.body.title, 
+        text: req.body.text, 
+        id: 2
     };
     const newNotesArr = notesArr.concat(newNotes);
     const lastNotes = writeFile("db/db.json", JSON.stringify(newNotesArr));
