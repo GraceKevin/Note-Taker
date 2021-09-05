@@ -2,11 +2,18 @@
   "name": "note-taker",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "14.x"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack",
+    "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
+    "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
+    "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies."
   },
   "repository": {
     "type": "git",
