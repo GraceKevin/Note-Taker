@@ -10,13 +10,13 @@ const writeFile = util.promisify(fs.writeFile)
 // router - api
 
 router.get("/api/notes", async (req, res) => {
-    const notes = await readFile("db/db.json", "utf-8");
+    const notes = await readFile("db/db.json", "utf8");
     const notesArr = JSON.parse(notes) || [];
     res.json(notesArr);
 })
 
 router.post("/api/notes", async (req, res) => {
-    const notes = await readFile("db/db.json", "utf-8");
+    const notes = await readFile("db/db.json", "utf8");
     const notesArr = JSON.parse(notes) || [];
     console.log(req. body);
     const newNotes = 
