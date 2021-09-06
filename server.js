@@ -1,8 +1,9 @@
 // npm install 
 
 const express = require('express');
-const HTMLroutes = require('./routes/html');
-const apiRoutes = require('./routes/api');
+
+const HTMLroutes = require('./routes/html.js');
+const apiRoutes = require('./routes/api.js');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
